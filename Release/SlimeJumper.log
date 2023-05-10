@@ -1,0 +1,6 @@
+﻿  surface.cpp
+E:\Source\BUAS\BuasIntake\surface.cpp(158,53): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+E:\Source\BUAS\BuasIntake\surface.cpp(158,39): warning C4244: 'initializing': conversion from 'int' to 'const float', possible loss of data
+E:\Source\BUAS\BuasIntake\surface.cpp(158,78): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+E:\Source\BUAS\BuasIntake\surface.cpp(158,63): warning C4244: 'initializing': conversion from 'int' to 'const float', possible loss of data
+  SlimeJumper.vcxproj -> E:\Source\BUAS\BuasIntake\SlimeJumper_x64.exe
