@@ -64,8 +64,10 @@ void Level::GenerateLevelBlocks() {
 	levelBlocks.push_back(LevelBlock(1350, (float)ScreenHeight - 640, 300, 20, LevelBlock::BlockType::regular));
 
 	levelBlocks.push_back(LevelBlock((float)ScreenWidth - 330, 0, 30, 320, LevelBlock::BlockType::regular));
-	levelBlocks.push_back(LevelBlock((float)ScreenWidth - 30, 0, 30, 600, LevelBlock::BlockType::sticky));
+
+
 	levelBlocks.push_back(LevelBlock((float)ScreenWidth - 80, 600, 80, 30, LevelBlock::BlockType::regular));
+	levelBlocks.push_back(LevelBlock((float)ScreenWidth - 40, 420, 40, 30, LevelBlock::BlockType::regular));
 
 	//FINISH
 	LevelBlock baseBlock((float)ScreenWidth - 300, 300, 200, 20, LevelBlock::BlockType::regular);

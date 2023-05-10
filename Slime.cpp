@@ -3,7 +3,7 @@
 #include <algorithm>    // std::max
 
 
-	//The entire slime stuff should be moved to a class adventually 
+	//TODO Most of these variables should be added to the header class
 	float slimeX = 100.0f, slimeY = 400.0f;
 	float slimeSpeedX = 0.0f;
 	float slimeSpeedY = 0.0f;
@@ -16,6 +16,7 @@
 	bool sticky = false;
 
 	//IDLE sprites i should be able to add this all together and loop through the frames. But for now this serves my purpose
+
 	static Sprite slimeIdle1(std::make_shared<Surface>("assets/Individual_Slime/slime-idle-0.png"), 1);
 	static Sprite slimeIdle2(std::make_shared<Surface>("assets/Individual_Slime/slime-idle-1.png"), 1);
 	static Sprite slimeIdle3(std::make_shared<Surface>("assets/Individual_Slime/slime-idle-2.png"), 1);
@@ -46,6 +47,7 @@
 	void Slime::Draw(float deltaTime)
 	{
 
+		//Draw box around the playerslime in debug.
 #ifdef NDEBUG
 		
 #else
@@ -55,7 +57,6 @@
 		float deltaTimeInSeconds = deltaTime / 1000.0f;
 
 		m_stickyEffectTimer -= (m_stickyEffectTimer -= deltaTimeInSeconds);
-
 
 		if (slimeGrounded && !slimeMoving)
 		{
@@ -106,6 +107,7 @@
 		}
 	}
 
+	//Update the sprite animation
 	void Slime::UpdateSprite(float deltaTime)
 	{
 		float deltaTimeInSeconds = deltaTime / 1000.0f;

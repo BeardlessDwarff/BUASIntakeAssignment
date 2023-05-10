@@ -8,6 +8,7 @@
 #include <SDL.h> // For key codes
 #include "Level.h"
 #include "Slime.h"
+#include <sstream>
 
 namespace Tmpl8
 {
@@ -29,6 +30,10 @@ namespace Tmpl8
 		
 		m_slime = new Slime(screen, m_level, std::bind(&Game::OnFinishReached, this));
 		m_level.GenerateCollisionLines();
+
+		m_timerActive = true;
+		m_startTime = std::chrono::steady_clock::now();
+		m_elapsedTime = 0;
 	}
 	
 
@@ -56,7 +61,13 @@ namespace Tmpl8
 
 		//Slime - Player 
 	    m_slime->Draw(deltaTime); //Draw Player
-		//m_slime->CheckCollision(); //Check for collision //This is being called in SlimeDraw now
+
+
+
+		//TODO No build in way to change font color. Not enough time currently to do this. 
+		//myFont->Print(screen, "timer", 800, 800);
+
+
 	}
 
 	void Game::KeyDown(int key)
@@ -76,8 +87,22 @@ namespace Tmpl8
 
 	}
 
+	//Called from Level when the player collides with a finish
 	void Game::OnFinishReached()
 	{
-		
+		m_timerActive = false;
+	}
+
+	void Game::UpdateLevelTimer()
+	{
+		if (m_timerActive) {
+			auto currentTime = std::chrono::steady_clock::now();
+			m_elapsedTime = static_cast<int>(std::chrono::duration_cast<std::chrono::seconds>(currentTime - m_startTime).count());
+		}
+
+		std::stringstream ss;
+		ss << "TIMER: " << m_elapsedTime;
+		std::string timerText = ss.str();
+		screen->Print(const_cast<char*>(timerText.c_str()), ScreenWidth / 2, 100, 0xFFFFFF);
 	}
 };

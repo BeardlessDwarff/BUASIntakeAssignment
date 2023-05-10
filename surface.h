@@ -15,6 +15,7 @@ constexpr int BlueMask = 0x0000ff;
 
 typedef unsigned int Pixel; // unsigned int is assumed to be 32-bit, which seems a safe assumption.
 
+
 inline Pixel AddBlend( Pixel a_Color1, Pixel a_Color2 )
 {
 	const unsigned int r = (a_Color1 & RedMask) + (a_Color2 & RedMask);

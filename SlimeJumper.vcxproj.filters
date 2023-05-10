@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="game.cpp" />
+    <ClCompile Include="CollisionDetection.cpp">
+      <Filter>Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="Level.cpp">
+      <Filter>Level</Filter>
+    </ClCompile>
+    <ClCompile Include="Slime.cpp">
+      <Filter>Slime</Filter>
+    </ClCompile>
+    <ClCompile Include="surface.cpp">
+      <Filter>Template</Filter>
+    </ClCompile>
+    <ClCompile Include="template.cpp">
+      <Filter>Template</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="game.h" />
+    <ClInclude Include="CollisionDetection.h">
+      <Filter>Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Level.h">
+      <Filter>Level</Filter>
+    </ClInclude>
+    <ClInclude Include="Slime.h">
+      <Filter>Slime</Filter>
+    </ClInclude>
+    <ClInclude Include="surface.h">
+      <Filter>Template</Filter>
+    </ClInclude>
+    <ClInclude Include="template.h">
+      <Filter>Template</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="_readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Collision">
+      <UniqueIdentifier>{f13befa8-8c34-4065-bd72-7c762d674f91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Level">
+      <UniqueIdentifier>{78f4d2f2-eef2-4556-8641-180703a7ae79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Slime">
+      <UniqueIdentifier>{01d148fa-1b5f-44d0-a517-163a2dff5844}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Template">
+      <UniqueIdentifier>{1e24d627-bf5f-4e33-b34e-5f371f68a984}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

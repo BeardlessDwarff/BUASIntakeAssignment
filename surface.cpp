@@ -155,7 +155,7 @@ int LineOutCode(float x, float y, float xMin, float xMax, float yMin, float yMax
 void Surface::Line( float x1, float y1, float x2, float y2, Pixel c )
 {
 	// clip (Cohen-Sutherland, https://en.wikipedia.org/wiki/Cohen%E2%80%93Sutherland_algorithm)
-	const float xmin = 0, ymin = 0, xmax = ScreenWidth - 1, ymax = ScreenHeight - 1;
+	const float xmin = 0.0f, ymin = 0.0f, xmax = (float)( ScreenWidth - 1), ymax = (float)(ScreenHeight - 1);
 	int c0 = LineOutCode( x1, y1, xmin, xmax, ymin, ymax ), c1 = LineOutCode( x2, y2, xmin, xmax, ymin, ymax);
 	bool accept = false;
 	while (1) 
@@ -579,7 +579,7 @@ void Font::Centre( Surface* a_Target, char* a_Text, int a_Y )
 	int x = (a_Target->GetPitch() - Width( a_Text )) / 2;
 	Print( a_Target, a_Text, x, a_Y );
 }
- 
+
 void Font::Print( Surface* a_Target, char* a_Text, int a_X, int a_Y, bool clip )
 {
 	Pixel* b = a_Target->GetBuffer() + a_X + a_Y * a_Target->GetPitch();
